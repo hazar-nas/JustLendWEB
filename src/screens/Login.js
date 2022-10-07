@@ -17,7 +17,7 @@ function Login() {
   const Auth = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('https://hazar-nodejs-mysql.herokuapp.com/login', {
+        await axios.post('http://hazar-nodejs-mysql.herokuapp.com/login', {
             email: loginFields.email,
             password: loginFields.password
         });

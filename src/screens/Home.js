@@ -37,7 +37,7 @@ function Home() {
 
   const refreshToken = async () => {
     try {
-        const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
+        const response = await axios.get('http://hazar-nodejs-mysql.herokuapp.com/token');
         setToken(response.data.accessToken);
         const decoded = jwt_decode(response.data.accessToken);
         // setName(decoded.name);
@@ -61,7 +61,7 @@ function Home() {
   axiosJWT.interceptors.request.use(async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-          const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
+          const response = await axios.get('http://hazar-nodejs-mysql.herokuapp.com/token');
           config.headers.Authorization = `Bearer ${response.data.accessToken}`;
           setToken(response.data.accessToken);
           const decoded = jwt_decode(response.data.accessToken);
@@ -94,7 +94,7 @@ function Home() {
 
   const handleExit =async()=>{
     try {
-      await axios.delete('https://hazar-nodejs-mysql.herokuapp.com/logout');
+      await axios.delete('http://hazar-nodejs-mysql.herokuapp.com/logout');
       navigate("/");
   } catch (error) {
       console.log(error);

@@ -17,7 +17,7 @@ function Register() {
   const Register = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('https://hazar-nodejs-mysql.herokuapp.com/register', {
+        await axios.post('http://hazar-nodejs-mysql.herokuapp.com/register', {
             name: signupFields.name,
             email: signupFields.email,
             password: signupFields.password,
