@@ -92,7 +92,7 @@ function Register() {
           <span onClick={()=>navigate('/')} style={{cursor:'pointer',fontSize:'12px', color:'#78eac1',fontWeight:'bold',marginLeft:'50px'}}>Login ?</span>
           {/* LOGIN BUTTON CONTAINER */}
           <div style={{marginTop:'2.5rem',background:'#f6f6f6', padding:"1rem 3rem"}}>
-              <button type='submit' onClick={()=>navigate('/')} className='btn-login'>Sign up</button>
+              <button className='btn-login'>Sign up</button>
           </div>
         </form>
       </div>

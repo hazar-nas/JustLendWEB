@@ -68,7 +68,7 @@ function Login() {
           <span onClick={()=>navigate('/register')} style={{cursor:'pointer',fontSize:'12px', color:'#78eac1',fontWeight:'bold',marginLeft:'50px'}}>Sign Up?</span>
             {/* LOGIN BUTTON CONTAINER */}
             <div style={{marginTop:'2.5rem',background:'#f6f6f6', padding:"1rem 3rem"}}>
-                <button type='submit' className='btn-login'>Login</button>
+                <button  className='btn-login'>Login</button>
             </div>
             
           </form>
