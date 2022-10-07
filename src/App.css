@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+body{
+  padding: 0;
+  margin: 0;
+}
+*::after,::before{
+  padding: 0;
+  margin: 0;
+}
+.login-bg{
+  background-color: #f6f6f6;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-card-container{
+  background-color: white;
+  width: 550px;
+  border: 1px solid #ccc;
+  padding: 25px 0 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.login-label{
+  font-size: 12px;
+  font-weight: bold;
+}
+.input-field{
+  border: 2px solid #ccc;
+  display: block;
+  padding: 10px 5px;
+  margin-top: 7px;
+ color: black;
+  opacity: .6;
+  width: 280px;
+  padding: 14px 15px;
+}
+
+.sidebar-icons-container{
+  cursor: pointer;
+  display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-top: 3.7rem;
+  padding-left: 1.2rem;
+}
+
+.icon-container{
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.icon-name--span{
+  margin-left: 12px;
+  align-self: center;
+  color: #ccc;
+}
+
+.icon-name--span--active{
+  margin-left: 12px;
+  align-self: center;
+  color: black;
+  font-weight: bold;
+}
+
+.Mui-selected{
+  font-weight: bold;
+  color: black !important;
+}
+.MuiTabs-indicator {
+  height: 4px !important;
+  background-color: #78eac1 !important;
+}
+.MuiButtonBase .Mui-selected{
+  background-color: #78eac1 !important;
+}
+
+.btn-login{
+  background-color: #78eac1;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: transparent;
+  cursor: pointer;
+  padding: 12px 3.2rem;
 }
