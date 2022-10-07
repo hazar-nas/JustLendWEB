@@ -32,24 +32,29 @@ function Home() {
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
  
+  console.log(token)
+
+
+  const refreshToken = async () => {
+    try {
+        const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
+        setToken(response.data.accessToken);
+        const decoded = jwt_decode(response.data.accessToken);
+        // setName(decoded.name);
+        setExpire(decoded.exp);
+    } catch (error) {
+        if (error.response) {
+            navigate("/");
+        }
+    }
+}
 
   useEffect(() => {
       refreshToken();
+      // eslint-disable-next-line
   }, []);
 
-  const refreshToken = async () => {
-      try {
-          const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
-          setToken(response.data.accessToken);
-          const decoded = jwt_decode(response.data.accessToken);
-          // setName(decoded.name);
-          setExpire(decoded.exp);
-      } catch (error) {
-          if (error.response) {
-              navigate("/");
-          }
-      }
-  }
+ 
 
   const axiosJWT = axios.create();
  
