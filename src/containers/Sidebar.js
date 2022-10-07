@@ -9,7 +9,7 @@ function Sidebar({activeItem, setActiveItem,icons}) {
  
 
   return (
-    <div style={{width:'13%',borderRight:'1px solid #ccc',height:'100%'}}>
+    <div style={{width:'13%',borderRight:'1px solid #ccc',height:'100vh'}}>
       <div className='sidebar-icons-container'>
         {icons.map((icon)=>(
            
