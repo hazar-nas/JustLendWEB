@@ -6,9 +6,9 @@ import Home from './screens/Home';
 import Register from './screens/Register';
 // import Tablee from './containers/Table';
 // import Campaign from './containers/Campaign';
-import axios from "axios";
+// import axios from "axios";
  
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (

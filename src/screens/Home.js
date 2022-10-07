@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import Campaign from '../containers/Campaign'
 import Sidebar from '../containers/Sidebar'
 import Logo from '../assets/just_lend_logo.png'
@@ -12,7 +12,7 @@ import { MdDashboard,
 import {Popover, Typography} from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 
 
 const icons = [
@@ -29,48 +29,48 @@ function Home() {
   const [activeItem, setActiveItem] = useState(icons[1].iconName )
   const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
-  const [token, setToken] = useState('');
-  const [expire, setExpire] = useState('');
+  // const [token, setToken] = useState('');
+  // const [expire, setExpire] = useState('');
  
-  console.log(token)
+  // console.log(token)
 
 
-  const refreshToken = async () => {
-    try {
-        const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
-        setToken(response.data.accessToken);
-        const decoded = jwt_decode(response.data.accessToken);
-        // setName(decoded.name);
-        setExpire(decoded.exp);
-    } catch (error) {
-        if (error.response) {
-            navigate("/");
-        }
-    }
-}
+//   const refreshToken = async () => {
+//     try {
+//         const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
+//         setToken(response.data.accessToken);
+//         const decoded = jwt_decode(response.data.accessToken);
+//         // setName(decoded.name);
+//         setExpire(decoded.exp);
+//     } catch (error) {
+//         if (error.response) {
+//             navigate("/");
+//         }
+//     }
+// }
 
-  useEffect(() => {
-      refreshToken();
-      // eslint-disable-next-line
-  }, []);
+//   useEffect(() => {
+//       refreshToken();
+//       // eslint-disable-next-line
+//   }, []);
 
  
 
-  const axiosJWT = axios.create();
+  // const axiosJWT = axios.create();
  
-  axiosJWT.interceptors.request.use(async (config) => {
-      const currentDate = new Date();
-      if (expire * 1000 < currentDate.getTime()) {
-          const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
-          config.headers.Authorization = `Bearer ${response.data.accessToken}`;
-          setToken(response.data.accessToken);
-          const decoded = jwt_decode(response.data.accessToken);
-          setExpire(decoded.exp);
-      }
-      return config;
-  }, (error) => {
-      return Promise.reject(error);
-  });
+  // axiosJWT.interceptors.request.use(async (config) => {
+  //     const currentDate = new Date();
+  //     if (expire * 1000 < currentDate.getTime()) {
+  //         const response = await axios.get('https://hazar-nodejs-mysql.herokuapp.com/token');
+  //         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+  //         setToken(response.data.accessToken);
+  //         const decoded = jwt_decode(response.data.accessToken);
+  //         setExpire(decoded.exp);
+  //     }
+  //     return config;
+  // }, (error) => {
+  //     return Promise.reject(error);
+  // });
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
